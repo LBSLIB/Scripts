@@ -7,14 +7,14 @@ $SecureBootStatus = Confirm-SecureBootUEFI
 $Time = -join @((Get-Date -Format "HH:mm"), " ", (Get-WmiObject -Class Win32_TimeZone | Select-Object -ExpandProperty Bias))
 $Date = (Get-Date -Format "dd-MM-yyyy")
 
-<#
+
 If(($BitlockerStatus.protectionstatus -eq "On") -and ($BitlockerStatus.VolumeStatus -eq "FullyEncrypted"))
 
 {
 $Date ,$Time | Out-File $log -Append
 $bitlockerStatus | Out-File $log -Append    
 }
-#>
+
 
 If($BitlockerStatus.protectionstatus -eq "Off")
 {
