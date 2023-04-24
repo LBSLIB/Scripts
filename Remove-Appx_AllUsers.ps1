@@ -139,17 +139,7 @@ Begin {
     Write-LogEntry -Stamp -Value "Remove-Appx Started"
     Write-LogEntry -Value "##################################"
 
-    #OS Check
-    $OS = (Get-CimInstance -ClassName Win32_OperatingSystem).BuildNumber
-    Switch -Wildcard ( $OS ) {
-        '21*' {
-            $OSVer = "Windows 10"
-            Write-Warning "This script is intended for use on Windows 11 devices. $($OSVer) was detected..."
-            Write-LogEntry -Value "This script is intended for use on Windows 11 devices. $($OSVer) was detected..."
-            Exit 1
-        }
-    }
-    # Black List of Appx Provisioned Packages to Remove for All Users
+   # Black List of Appx Provisioned Packages to Remove for All Users
     $BlackListedApps = $null
     $BlackListedApps = New-Object -TypeName System.Collections.ArrayList
     $BlackListedApps.AddRange(@(
