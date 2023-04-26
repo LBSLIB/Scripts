@@ -1,50 +1,131 @@
-Out-Host "##################################"
-Out-Host "Remove-Appx Started"
-Out-Host "##################################"
-
-
-    $BlackListedApps = "Microsoft.BingNews",
-            "Microsoft.BingWeather",
-            "Microsoft.GamingApp",
-            "Microsoft.MicrosoftSolitaireCollection",
-            "Microsoft.WindowsCommunicationsApps",
-            "Microsoft.WindowsFeedbackHub",
-            "Microsoft.XboxGameOverlay",
-            "Microsoft.XboxGamingOverlay",
-            "Microsoft.XboxIdentityProvider",
-            "Microsoft.XboxSpeechToTextOverlay",
-            "Microsoft.XboxGameCallableUI",
-            "Microsoft.Xbox.TCUI",
-            "Microsoft.YourPhone",
-            "Microsoft.ZuneMusic",
-            "Microsoft.ZuneVideo",
-            "Microsoft.MicrosoftOfficeHub",
-            "Microsoft.Todos",
-            "Microsoft.WindowsMaps",
-            "Microsoft.People",
-            "Microsoft.WindowsAlarms",
-            "Microsoft.GetHelp",
-            "Microsoft.MicrosoftStickyNotes",
-            "Microsoft.PowerAutomateDesktop",
-            "Microsoft.OneDriveSync",
-            "Microsoft.Getstarted",
-            "Microsoft.WindowsTerminal",
-            "Clipchamp.Clipchamp",
-            "MicrosoftTeams"
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.BingNews" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
 
  
 
-Foreach($BlackListedApp in $BlackListedApps){
-         $AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like $BlackListedApp } | Select-Object -ExpandProperty PackageName -First 1
-         $RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
-
-         #Re-check existence
-         $AppProvisioningPackageNameReCheck = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like $BlackListedApp } | Select-Object -ExpandProperty PackageName -First 1
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.BingWeather" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
 
  
 
-         If ([string]::IsNullOrEmpty($AppProvisioningPackageNameReCheck) -and ($RemoveAppx.Online -eq $true))
-              {
-                   Out-Host "$($BlackListedApp) removed"
-              }
-    }
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.GamingApp" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.MicrosoftSolitaireCollection" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.WindowsCommunicationsApps" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.WindowsFeedbackHub" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.XboxGameOverlay" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.XboxGamingOverlay" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.XboxIdentityProvider" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.XboxSpeechToTextOverlay" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.XboxGameCallableUI" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.Xbox.TCUI" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.YourPhone" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.ZuneMusic" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.ZuneVideo" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.MicrosoftOfficeHub" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.Todos" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.WindowsMaps" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.People" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.WindowsAlarms" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.GetHelp" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.MicrosoftStickyNotes" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.PowerAutomateDesktop" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.OneDriveSync" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.Getstarted" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.WindowsTerminal" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Clipchamp.Clipchamp" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+ 
+
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "MicrosoftTeams" } | Select-Object -ExpandProperty PackageName -First 1
+$RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
