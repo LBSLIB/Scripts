@@ -34,8 +34,7 @@ Out-Host "##################################"
 
  
 
-Foreach($BlackListedApp in $BlackListedApps)
-    {
+Foreach($BlackListedApp in $BlackListedApps){
          $AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like $BlackListedApp } | Select-Object -ExpandProperty PackageName -First 1
          $RemoveAppx = Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
 
