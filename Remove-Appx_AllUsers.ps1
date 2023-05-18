@@ -79,5 +79,8 @@ Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -
 $AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Clipchamp.Clipchamp" } | Select-Object -ExpandProperty PackageName -First 1
 Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
 
+$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.Getstarted" } | Select-Object -ExpandProperty PackageName -First 1
+Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
 $AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "MicrosoftTeams" } | Select-Object -ExpandProperty PackageName -First 1
 Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
