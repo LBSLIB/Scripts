@@ -70,9 +70,6 @@ Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -
 $AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.OneDriveSync" } | Select-Object -ExpandProperty PackageName -First 1
 Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
 
-$AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.Getstarted" } | Select-Object -ExpandProperty PackageName -First 1
-Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
-
 $AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "Microsoft.WindowsTerminal" } | Select-Object -ExpandProperty PackageName -First 1
 Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
 
