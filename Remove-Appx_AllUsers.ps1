@@ -87,3 +87,7 @@ Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -
 
 $AppProvisioningPackageName = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "MicrosoftCorporationII.QuickAssist" } | Select-Object -ExpandProperty PackageName -First 1
 Remove-AppxProvisionedPackage -PackageName $AppProvisioningPackageName -Online -AllUsers
+
+Get-AppxPackage -AllUsers | Where-Object {$_.Name -Like '*OutlookForWindows*'} | Remove-AppxPackage -AllUsers -ErrorAction Continue
+Get-AppxPackage -AllUsers | Where-Object {$_.Name -Like '*MSTeams*'} | Remove-AppxPackage -AllUsers -ErrorAction Continue
+Get-AppxPackage -AllUsers | Where-Object {$_.Name -Like '*Microsoft.BingSearch*'} | Remove-AppxPackage -AllUsers -ErrorAction Continue
